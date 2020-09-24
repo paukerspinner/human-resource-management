@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal" data-target="#create"><span class="fas fa-plus"></span> Add Skill</button>
     <h3 class="text-themecolor">Skills</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Settings</li>
         <li class="breadcrumb-item active">Skills</li>
     </ol>
@@ -23,7 +23,7 @@
                                     <th> Skill Name</th>
                                     <th>Description</th>
                                     <th> Status</th>
-                                    <th> Actions</th>
+                                    <th> Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>

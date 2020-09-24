@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('Heading')
     {{--<button type="button"  onclick="window.location.href='{{route('attendance.create')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus" ></span> Add Attendance</button>--}}
-    <h3 class="text-themecolor">My Attendance</h3>
+    <h3 class="text-themecolor">Lịch điểm danh của tôi</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
-        <li class="breadcrumb-item active">My Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
+        <li class="breadcrumb-item active">Lịch điểm danh của tôi</li>
     </ol>
 @stop
 @section('content')
@@ -21,7 +21,7 @@
                                 <div class="round round-md align-self-center round-info"><i class="far fa-calendar-alt"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h3 class="m-b-0 font-light">{{$averageAttendance}}%</h3>
-                                    <h5 class="text-muted m-b-0">Average&nbspAttend</h5></div>
+                                    <h5 class="text-muted m-b-0">Tỉ lệ có mặt trung bình</h5></div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                                 <div class="round round-md align-self-center round-danger"><i class="far fa-calendar-plus"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h3 class="m-b-0 font-light">{{$averageArrival}}</h3>
-                                    <h5 class="text-muted m-b-0">Average&nbspArrival</h5></div>
+                                    <h5 class="text-muted m-b-0">Thời gian đến trung bình</h5></div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 <div class="round round-md align-self-center round-warning"><i class="far fa-clock"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h3 class="m-b-0 font-light">{{$averageHours}} HRS</h3>
-                                    <h5 class="text-muted m-b-0">Average Hour</h5></div>
+                                    <h5 class="text-muted m-b-0">Số giờ trung bình</h5></div>
                             </div>
                         </div>
                     </div>
@@ -60,9 +60,9 @@
                             <div class="d-flex flex-row">
                                 <div class="round round-md align-self-center round-primary"><i class="far fa-calendar-check"></i></div>
                                 <div class="m-l-10 align-self-center">
-                                    <h5 class="m-b-0 ">{{$present}}&nbsp Present</h5>
-                                    <h5 class="m-b-0 ">{{$leaveCount}}&nbsp Leaves</h5>
-                                    <h5 class="m-b-0"> {{$absent}}&nbsp Absent</h5></div>
+                                    <h5 class="m-b-0 ">{{$present}}&nbsp Có mặt</h5>
+                                    <h5 class="m-b-0 ">{{$leaveCount}}&nbsp Nghỉ phép</h5>
+                                    <h5 class="m-b-0"> {{$absent}}&nbsp Vắng mặt</h5></div>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         Auth::user()->isAllowed('AttendanceController:showTimeline')
                         )
                         <select class="form-control" id="employee">
-                            <option value={{Auth::user()->id}} @if(Auth::user()->type=='remote')Selected @endif>Select Employee</option>
+                            <option value={{Auth::user()->id}} @if(Auth::user()->type=='remote')Selected @endif>Chọn nhân viên</option>
                             @foreach($employees as $employee)
                             <option value="{{$employee->id}}"  @if($employeeId==$employee->id) Selected @endif>{{$employee->firstname}} {{$employee->lastname}}</option>
                             @endforeach

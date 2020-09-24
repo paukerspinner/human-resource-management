@@ -3,7 +3,7 @@
     <button type="button"  onclick="window.location.href='{{route('employee.create')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus" ></span> Add Employee</button>
     <h3 class="text-themecolor">Employees</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">People Management</li>
 		<li class="breadcrumb-item active">Employees</li>
 	</ol>
@@ -13,7 +13,7 @@
         <div class="card-body">
             <div class="float-right">
                 <select class="form-control" id="filter">
-                    <option value="select">Select Employees</option>
+                    <option value="select">Chọn nhân viêns</option>
                     @foreach($filters as $filter)
                     <option value="{{$filter}}" @if($filter==$selectedFilter) selected @endif>{{ucfirst(trans($filter))}}</option>
                     @endforeach
@@ -25,7 +25,7 @@
                     <thead>
                     <tr>
                         @if(count($employees) > 0)
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th>Email</th>
                         <th>Mobile </th>
                         <th>Designation</th>
@@ -33,7 +33,7 @@
                         <th>Department</th>
                         <th>Joining Date</th>
                         <th>Employment Status</th>
-                        <th>Actions</th>
+                        <th>Hành động</th>
                     </tr>
                     </thead>
                     <tbody>

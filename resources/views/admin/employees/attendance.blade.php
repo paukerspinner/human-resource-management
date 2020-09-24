@@ -3,7 +3,7 @@
     <button type="button"  onclick="window.location.href='{{route('employee.create')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus" ></span> Add Employee</button>
     <h3 class="text-themecolor">Employees</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">People Management</li>
 		<li class="breadcrumb-item active">Employees</li>
 	</ol>
@@ -25,14 +25,14 @@
 							<table id="demo-foo-accordion" class="table table-bordered m-b-0 table-hover toggle-arrow-tiny" data-filtering="true" data-paging="true" data-sorting="true" data-paging-size="7">
 								<thead>
 								<tr class="footable-filtering">
-                                    <th>Name</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
                                     <th>Mobile </th>
                                     <th>Designation</th>
                                     <th>Office</th>
                                     <th>Joining Date</th>
                                     <th>Status</th>
-                                    <th>Actions</th>
+                                    <th>Hành động</th>
 								</tr>
 								</thead>
 								<tbody>

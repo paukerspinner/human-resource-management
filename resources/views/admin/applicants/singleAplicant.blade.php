@@ -10,7 +10,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="form-group">
-						<label for="name">Name</label>
+						<label for="name">Tên</label>
 					</div>
 				</div>
 			</div>

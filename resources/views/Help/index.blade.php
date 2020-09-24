@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('Heading')
-    <h3 class="text-themecolor">Help</h3>
+    <h3 class="text-themecolor">Trợ giúp</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item">Help</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item</li>
     </ol>
 @stop
 @section('content')

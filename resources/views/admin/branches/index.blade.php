@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('branch.create')}}'"><span class="fas fa-plus" ></span> Add Branch</button>
 	<h3 class="text-themecolor">Branches</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Settings</li>
 		<li class="breadcrumb-item active">Branches</li>
 	</ol>
@@ -19,12 +19,12 @@
 							<thead>
 							@if($branches->count() > 0)
 							<tr>
-								<th> Name</th>
+								<th>Tên</th>
 								<th> Address</th>
 								<th> Timing Start</th>
 								<th> Timing Off</th>
 								<th> Contact No</th>
-								<th> Actions</th>
+								<th> Hành động</th>
 							</tr>
 							</thead>
 							<tbody>

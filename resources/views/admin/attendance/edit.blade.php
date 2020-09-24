@@ -3,8 +3,8 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('leaves')}}'"><span class="fas fa-plus" ></span> Add Leave</button>
 	<h3 class="text-themecolor">Update Attendance</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-		<li class="breadcrumb-item active">Attendance</li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+		<li class="breadcrumb-item active">Điểm danh</li>
 		<li class="breadcrumb-item active">Update</li>
 	</ol>
 @endsection
@@ -25,7 +25,7 @@
 								<!--/span-->
 								<div class="col-md-6">
 									<div class="form-group row">
-										<label class="control-label text-right col-md-3">Delay</label>
+										<label class="control-label text-right col-md-3">Đến trễ</label>
 										<div class="col-md-9 date1" >
 											<input  type="text" class="form-control" name="attendance_delay" value="{{$attendance->delay}}">
 											<span class="input-group-addon">

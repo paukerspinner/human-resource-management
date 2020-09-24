@@ -2,8 +2,8 @@
 @section('Heading')
     <h3 class="text-themecolor">Sheet</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
         <li class="breadcrumb-item active">Sheet</li>
     </ol>
 @stop
@@ -22,7 +22,7 @@
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_6'])}}">June</option>
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_7'])}}" >July</option>
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_8'])}}" >August</option>
-                        <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_9'])}}">September</option>
+                        <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_9'])}}">Chọn nhân viên</option>
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_10'])}}">October</option>
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_11'])}}">November</option>
                         <option class="center-text" value="{{route('attendance.sheet',['id'=>'2018_12'])}}" >December</option>
@@ -93,7 +93,7 @@
             ?>
 	<table class="table table-attendance col-sm-8" style=" margin-top: 0px;">
 		<thead >
-             <th colspan='2' style="background-color: #808080;">Name</th>
+             <th colspan='2' style="background-color: #808080;">Tên</th>
             @for($i=01; $i<=31;$i++)
 			    <th style="background-color: #808080; padding: 5px; text-align: left; font-size: 10px;">{{$i}}</th>
             @endfor

@@ -3,7 +3,7 @@
 	<button type="button"  onclick="window.location.href='{{route('job.create')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus"></span> Add Job</button>
 	<h3 class="text-themecolor">Jobs</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Hiring</li>
 		<li class="breadcrumb-item active">Jobs</li>
 	</ol>
@@ -29,7 +29,7 @@
 			                        Auth::user()->hasRole('admin') ||
 			                        Auth::user()->hasPermissionTo('EmployeeController:index')
 		                        )
-								<th> Actions </th>
+								<th> Hành động </th>
 								@endif
 							</tr>
 							</thead>

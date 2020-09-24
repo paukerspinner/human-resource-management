@@ -65,7 +65,7 @@ class LeaveController extends Controller
 
     public function employeeleaves($id = '')
     {
-        $this->meta['title'] = 'Show Employee Leaves';
+        $this->meta['title'] = 'Show Nghỉ phép của công nhân';
         $user = Auth::user()->designation;
         if ($user == 'CEO' || $user == 'Admin') {
             if ($id == 'Approved' || $id == 'Declined') {

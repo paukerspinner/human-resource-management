@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('vendor.create')}}'"><span class="fas fa-plus"></span> Add Vendor</button>
     <h3 class="text-themecolor">Vendors</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">People Management</li>
         <li class="breadcrumb-item active">vendors</li>
     </ol>
@@ -28,7 +28,7 @@
                                 <th>Country</th>
                                 <th>Mobile</th>
                                 <th>Fax</th>
-                                <th>Actions</th>
+                                <th>Hành động</th>
                             </tr>
                             </thead>
                             <tbody>

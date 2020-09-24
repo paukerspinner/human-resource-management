@@ -15,7 +15,7 @@
                 <th>Subject</th>
                 <th>Status</th>                
                 @if(Auth::user()->admin)
-                <th>Manage Leaves</th>
+                <th>Quản lý nghỉ phép</th>
                 @endif
             </thead>
             <tbody class="table-bordered table-hover table-striped">

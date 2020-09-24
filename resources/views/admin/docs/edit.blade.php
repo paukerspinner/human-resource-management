@@ -2,7 +2,7 @@
 @section('Heading')
     <h3 class="text-themecolor">Update Document</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Settings</li>
         <li class="breadcrumb-item active">Document</li>
         <li class="breadcrumb-item active">Edit</li>
@@ -18,7 +18,7 @@
                     <div class="form-body">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Name</label>
+                                <label class="control-label">Tên</label>
                                 <input type="text" value="{{$document->name}}"  name="document_name" class="form-control" placeholder="Enter Title">
                             </div>
                         </div>

@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Edit Role</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Roles Permissions</li>
 		<li class="breadcrumb-item active">Edit</li>
 	</ol>
@@ -21,7 +21,7 @@
 
 							<div class="col-md-6">
 								<div class="form-group">
-									<label class="control-label">Name</label>
+									<label class="control-label">Tên</label>
 									<input  type="text" name="name" placeholder="Enter name here" class="form-control" value="{{$role->name}}">
 									<input type="hidden" name="status" value="1">
 								</div>

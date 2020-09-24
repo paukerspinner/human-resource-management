@@ -8,7 +8,7 @@
         <form action="{{route('user.store')}}" method="Post">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Tên</label>
                 <input type="text" name="name" placeholder="Enter Name here" class="form-control">
             </div>
             <div class="form-group">

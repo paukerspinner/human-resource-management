@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('applicants')}}'">Applicants</button>
 	<h3 class="text-themecolor">Hired Applicant</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Applicant</li>
 		<li class="breadcrumb-item active">Hired Applicant</li>
 	</ol>
@@ -18,12 +18,12 @@
 							<thead>
 							<tr>
 								<th>Avatar</th>
-								<th>Name</th>
+								<th>Tên</th>
 								<th>City</th>
 								<th>Job Status</th>
 								<th>Applied For</th>
 								<th>CV</th>
-								<th>Actions</th>
+								<th>Hành động</th>
 							</tr>
 							</thead>
 							<tbody>

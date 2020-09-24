@@ -2,8 +2,8 @@
 @section('Heading')
     <h3 class="text-themecolor">All Attendance</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
     </ol>
 @stop
 @section('content')
@@ -44,7 +44,7 @@
                                 <div class="col-md-7">
                                     <label for="leave_type">Choose Type</label>
                                     <select class="form-control" name="leave_type" id="leave_type">
-                                        <option selected value="present">Present</option>
+                                        <option selected value="present">Có mặt</option>
                                         <option value="Full Leave">Full Leave</option>
                                         <option value="Half Leave">Half Leave</option>
                                         <option value="Short Leave">Short Leave</option>

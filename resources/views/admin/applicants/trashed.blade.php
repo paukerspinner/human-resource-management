@@ -13,12 +13,12 @@
 			<thead>
 			<tr>
 				<th> Image</th>
-				<th> Name</th>
+				<th> Tên</th>
 				<th> City</th>
 				<th> Job Status </th>
 				<th>Apllied for</th>
 				<th> CV </th>
-				<th>Actions</th>
+				<th>Hành động</th>
 			</tr>
 			</thead>
 			<tbody class="table-bordered table-hover table-striped">
@@ -36,7 +36,7 @@
 					</td>
 					<td>
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Actions</button>
+							<button type="button" class="btn btn-primary">Hành động</button>
 							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>

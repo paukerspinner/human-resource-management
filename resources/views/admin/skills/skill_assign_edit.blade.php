@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('skill.index')}}'" >Back</button>
     <h3 class="text-themecolor">Skill Assigned Employees</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Setting</li>
         <li class="breadcrumb-item active">Skills</li>
         <li class="breadcrumb-item active">Skill Assigned Employees</li>

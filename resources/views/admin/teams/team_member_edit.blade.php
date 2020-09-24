@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('teams.index')}}'" >Back</button>
     <h3 class="text-themecolor">Departments</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Employee Mgmt</li>
         <li class="breadcrumb-item active">Teams</li>
         <li class="breadcrumb-item active">Team Members</li>

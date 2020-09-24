@@ -104,7 +104,7 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-md-6">
-							<label for="name">Name</label>
+							<label for="name">Tên</label>
 							<input type="text" name="name" placeholder="Enter name here" class="form-control" value="{{old('name')}}">
 						</div>
 						<div class="form-group col-md-6">

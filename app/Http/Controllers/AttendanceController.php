@@ -87,7 +87,7 @@ class AttendanceController extends Controller
         $date = $datetime->toDateString();
 
         $datetime = Carbon::now();
-        $current_time = $datetime->format('h:m');
+        $current_time = $datetime->format('h:i');
 
         $selected_in_out = '';
         $attendance = Attendance::where(['date' => $date, 'employee_id' => $emp_id])->orderBy('timestamp_in', 'asc')->first();
@@ -121,7 +121,7 @@ class AttendanceController extends Controller
         $date = $datetime->toDateString();
 
         $datetime = Carbon::now();
-        $current_time = $datetime->format('h:m');
+        $current_time = $datetime->format('h:i');
         session(['date' => $date]);
         $selected_in_out = '';
         $attendance = AttendanceBreak::where(['date' => $date, 'employee_id' => $emp_id])->orderBy('timestamp_break_start', 'asc')->first();
@@ -196,6 +196,92 @@ class AttendanceController extends Controller
         ]);
     }
 
+    public function selfAttendance()
+    {
+        $datetime = Carbon::now();
+        $date = $datetime->toDateString();
+        $attendance_summary = AttendanceSummary::where(['date' => $date, 'employee_id' => Auth::user()->id])->first();
+        $is_attended = !empty($attendance_summary->first_timestamp_in);
+
+        $is_lelf = false;//!empty($attendance_summary->last_timestamp_out);
+        
+        return view('admin.attendance.selfAttendance')->with([
+            'is_attended'   => $is_attended,
+            'is_left'       => $is_lelf,
+        ]);
+    }
+
+    public function selfStoreAttendance(Request $request)
+    {
+        $idEmployee = Auth::user()->id;
+        $datetime = Carbon::now();
+        $date = $datetime->toDateString();
+        $current_time = $datetime->format('H:i:00');
+
+        $action = $request->input('action');
+        if ($action == 'attend')
+        {
+            
+            $reason = $request->input('reason');
+            
+            $employee = Employee::find(Auth::user()->id);
+            $office_location = Branch::find($employee->branch_id);
+            $ofc_in = Carbon::parse($office_location->timing_start);
+            $emp_in = Carbon::parse($current_time);
+            $delay = $emp_in->diffInMinutes($ofc_in);
+            $day = Carbon::parse($request->date)->format('l');
+            $is_delay = 'no';
+            if ($emp_in->gt($ofc_in) && $delay > 30) {
+                $is_delay = 'yes';
+            }
+            if (
+                ($office_location->id == 1 && $day == 'Friday') ||
+                ($office_location->id == 2 && $day == 'Saturday')
+            ) {
+                $is_delay = 'No';
+            }
+            
+            $arr = [
+                'employee_id'        => $idEmployee,
+                'first_timestamp_in' => $date.' '.$current_time,
+                'total_time'         => 0,
+                'is_delay'           => $is_delay,
+                'reason'             => $reason,
+                'date'               => $date,
+            ];
+            $attendance_summary = AttendanceSummary::create($arr);
+        } elseif ($action == 'leave') {
+            $attendance_summary = AttendanceSummary::where(['date' => $date, 'employee_id' => $idEmployee])->first();
+            $first_timestamp_in = $attendance_summary->first_timestamp_in;
+            $last_timestamp_out = $date.' '.$current_time;
+            
+            $in = Carbon::parse($first_timestamp_in);
+            $out = Carbon::parse($last_timestamp_out);
+            $totaltime = $out->diffInMinutes($in);
+            $arr = [
+                'last_timestamp_out' => $last_timestamp_out,
+                'total_time'         => $totaltime,
+            ];
+            $attendance_summary->update($arr);
+        }
+        return redirect()->route('attendance.self');
+    }
+
+    public function acceptDelay(Request $request, $id, $date)
+    {
+        $action = $request->input('action');
+        $attendance_summary = AttendanceSummary::where(['date' => $date, 'employee_id' => $id])->first();
+        if ($action == 'accept') {
+            $acceptDelay = 'yes';
+        } else {
+            $acceptDelay = 'no';
+        }
+        $attendance_summary->update([
+            'accept_delay' => $acceptDelay
+        ]);
+        return redirect()->back();
+    }
+
     public function createByAjax($emp_id = '', $date = '')
     {
         $this->meta['title'] = 'Create Attendance';
@@ -268,7 +354,6 @@ class AttendanceController extends Controller
             $attendance['timestamp_out'] = Carbon::parse($request->time_out);
         }
         $attendance = Attendance::create($attendance);
-
         $this->storeAttendaceSummary($request);
 
         if ($attendance) {
@@ -1162,6 +1247,8 @@ class AttendanceController extends Controller
             }
         }
 
+
+
         //Leave DaysEnd
         $dow = [0, 1, 2, 3, 4, 5, 6];
         foreach ($branchWeekend as $day) {
@@ -1175,23 +1262,28 @@ class AttendanceController extends Controller
                 $leaveCount[] = $leavecnt;
             }
         }
+
         $JoiningDate = Employee::where('id', $employeeId)->first();
         $periods[] = CarbonPeriod::create($JoiningDate->joining_date, Carbon::now()->toDateString());
         $absentDates = [];
+
         foreach ($periods as $period) {
             foreach ($period as $dates) {
                 $absentDates[] = $dates->format('Y-m-d');
             }
         }
+
+
         foreach ($absentDates as $date) {
             if (! in_array($date, $presentDate) && in_array(Carbon::parse($date)->format('l'), $branchWeekend) == false && in_array(Carbon::parse($date)->toDateString(), $leaveDate) == false) {
                 $events[] = [
-                    'title' => 'Absent   ',
+                    'title' => 'Vắng mặt   ',
                     'date'  => Carbon::parse($date)->toDateString(),
                     'color' => 'red',
                 ];
             }
         }
+
         //For Absent Event
         $till_date = new DateTime();
         $absent = [];

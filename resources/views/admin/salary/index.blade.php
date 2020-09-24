@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Salary</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Payments</li>
 		<li class="breadcrumb-item active">Salary</li>
 	</ol>
@@ -25,10 +25,10 @@
 						<th>Bonus</th>
 						<th>Approved Leaves</th>
 						<th>UnApproved Leaves</th>
-						<th>Absent</th>
-						<th>Present</th>
+						<th>Vắng mặt</th>
+						<th>Có mặt</th>
 						<th>Net Payable</th>
-						<th> Actions </th>
+						<th> Hành động </th>
 					</tr>
 					</thead>
 					<tbody>

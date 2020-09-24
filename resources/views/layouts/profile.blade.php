@@ -93,14 +93,14 @@
 
                     </li>
                     <li class="list-group-item">
-                        <a href="{{route('documents.list')}}">Apply for Leave</a>
+                        <a href="{{route('documents.list')}}">Làm đơn xin nghỉ phép</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{route('documents.list')}}">Leaves</a>
+                        <a href="{{route('documents.list')}}">Nghỉ phép</a>
 
                     </li>
                     <li class="list-group-item">
-                        <a href="{{route('employee.attendance')}}">Attendance</a>
+                        <a href="{{route('employee.attendance')}}">Điểm danh</a>
                     </li>
                 </ul>
             </div>

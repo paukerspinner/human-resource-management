@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('Heading')
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 	</ol>
 @stop
 @section('content')

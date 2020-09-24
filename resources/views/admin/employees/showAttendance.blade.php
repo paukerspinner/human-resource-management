@@ -70,7 +70,7 @@
 
                 </li>
                 <li class="list-group-item">
-                    <a href="{{route('employee.attendance')}}">Attendance</a>
+                    <a href="{{route('employee.attendance')}}">Điểm danh</a>
                 </li>
             </ul>
         </div>
@@ -86,7 +86,7 @@
             <div class="panel panel-default" id="calendar">
                 <div class="panel-heading text-center">
                     <div>
-                        <b style="text-align: center;">Attendance</b>
+                        <b style="text-align: center;">Điểm danh</b>
                     </div>
                 </div>
                 <div class="panel-body">

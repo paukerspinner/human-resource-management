@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('user.create')}}'"><span class="fas fa-plus"></span> Add User</button>
 	<h3 class="text-themecolor">Users</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Users</li>
 	</ol>
 @stop
@@ -15,7 +15,7 @@
 					<table class="table">
 						<thead>
 						<tr>
-							<th> Name</th>
+							<th>Tên</th>
 							<th> Permissions </th>
 							@if(Auth::user()->admin)
 							@endif

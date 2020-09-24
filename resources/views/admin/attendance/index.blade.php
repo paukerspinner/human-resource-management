@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('Heading')
-    <h3 class="text-themecolor">Attendance</h3>
+    <h3 class="text-themecolor">Điểm danh</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
     </ol>
 @stop
 @section('content')
@@ -20,9 +20,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="name">Name:</label>
+                                <label for="name">Tên:</label>
                                 <select class="form-control nameselect2" name="employee_id">
-                                    <option value="0">Select Employee</option>
+                                    <option value="0">Chọn nhân viên</option>
                                     @foreach($employees as $emp)
                                     <option value="{{$emp->id}}" @if($emp_id == $emp->id) selected @endif >{{$emp->fullname}}</option>
                                     @endforeach
@@ -38,7 +38,7 @@
                         <label for="in_out">Check</label>
                         <select class="form-control" name="in_out">
                             <option value="in" @if($selected_in_out == "in") selected @endif >Time In</option>
-                            <option value="out" @if($selected_in_out == "out") selected @endif>Time Out</option>
+                            <option value="out" @if($selected_in_out == "out") selected @endif>Thời điểm về</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -52,7 +52,7 @@
                     </div>
                     
                     <div class="container-fluid" id="totalhours">
-                        <label for="delay">is Delay ?</label>
+                        <label for="delay">Đến trễ ?</label>
                         <div>
                             @if(isset($attendance_summary->is_delay)) {{$attendance_summary->is_delay}} @endif
                         </div>
@@ -114,7 +114,7 @@
                                                     <label for="in_out">Check</label>
                                                     <select class="form-control" name="in_out">
                                                         <option value="in" @if($att->in_out == "in") selected @endif >Time In</option>
-                                                        <option value="out" @if($att->in_out == "out") selected @endif>Time Out</option>
+                                                        <option value="out" @if($att->in_out == "out") selected @endif>Thời điểm về</option>
                                                     </select>
 
                                                     <label for="time">Time at</label>

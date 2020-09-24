@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('Heading')
-	<h3 class="text-themecolor">Leaves</h3>
+	<h3 class="text-themecolor">Nghỉ phép</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-		<li class="breadcrumb-item active">Attendance</li>
-		<li class="breadcrumb-item active">Leaves</li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+		<li class="breadcrumb-item active">Điểm danh</li>
+		<li class="breadcrumb-item active">Nghỉ phép</li>
 	</ol>
 @stop
 @section('content')
@@ -27,7 +27,7 @@
 		   {{csrf_field()}}
 		  <div class="form-group">
 			<div class="col-md-6">
-				<label for="name">Name:</label>
+				<label for="name">Tên:</label>
 				<select class="form-control" name="employee_id">
 				 @foreach($employees as $employee)
 				   <option  @if(old('employee_id') == $employee->id) selected @endif value={{$employee->id}}>{{$employee->firstname}} {{$employee->lastname}}</option>

@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal" data-target="#create"><span class="fas fa-plus"></span> Add leave Type</button>
     <h3 class="text-themecolor">Leave Types</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Settings</li>
         <li class="breadcrumb-item active">Leave Types</li>
     </ol>
@@ -20,10 +20,10 @@
                             @if($leave_types->count() > 0)
                                 <tr>
                                     <td>#</td>
-                                    <th>Name</th>
+                                    <th>Tên</th>
                                     <th>Count</th>
                                     <th>Status</th>
-                                    <th>Actions</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,7 +71,7 @@
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label">Name</label>
+                                                            <label class="control-label">Tên</label>
                                                             <input  type="text" name="name" value="{{old('name',$leave_type->name)}}" placeholder="Enter Name Here" class="form-control">
                                                         </div>
                                                         <div class="form-group">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label">Name</label>
+                            <label class="control-label">Tên</label>
                             <input  type="text" name="name" placeholder="Enter Name Here" class="form-control">
                         </div>
                         <div class="form-group">

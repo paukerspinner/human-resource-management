@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Create Job</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Hiring</li>
 		<li class="breadcrumb-item active">Job</li>
 		<li class="breadcrumb-item active">Create</li>

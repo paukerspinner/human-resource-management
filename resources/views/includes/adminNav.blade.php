@@ -68,27 +68,28 @@
 
                 </li>
                 @endif
-                <li  @if(str_contains(Request::fullUrl(),'attendance') || request()->is('leave/create') || request()->is('leave/admin_create') || request()->is('my_leaves') || request()->is('employee_leaves') || str_contains(Request::fullUrl(),'leave/edit')|| str_contains(Request::fullUrl(),'leave/show')) class = "active" @endif ><a class="has-arrow waves-effect waves-dark" href="{{route('attendance')}}"><i class="mdi mdi-alarm-check"></i><span class="hide-menu">Attendance</span></a>
+                <li  @if(str_contains(Request::fullUrl(),'attendance') || request()->is('leave/create') || request()->is('leave/admin_create') || request()->is('my_leaves') || request()->is('employee_leaves') || str_contains(Request::fullUrl(),'leave/edit')|| str_contains(Request::fullUrl(),'leave/show')) class="active" @endif ><a class="has-arrow waves-effect waves-dark" href={{route('attendance.show', Auth::user()->id)}}><i class="mdi mdi-alarm-check"></i><span class="hide-menu">Điểm danh</span></a>
                     <ul aria-expanded="false" class="collapse">
                         @if (
                                 Auth::user()->isAllowed('AttendanceController:today_timeline')
                         )
-                        <li><a href="{{route('today_timeline')}}" @if( str_contains(Request::fullUrl(),'attendance/create')) class="active" @endif>Today</a></li>
+                        <li><a href="{{route('today_timeline')}}" @if( str_contains(Request::fullUrl(),'attendance/create')) class="active" @endif>Hôm nay</a></li>
                         @endif
-                        <li><a href="{{route('myAttendance')}}">My Attendance</a></li>
+                        <li><a href="{{route('attendance.self')}}">Tự điểm danh</a></li>
+                        <li><a href="{{route('myAttendance')}}">Lịch điểm danh của tôi</a></li>
                         @if (
                         Auth::user()->isAllowed('AttendanceController:timeline')
                         )
-                        <li><a href="{{route('timeline')}}">Timeline</a></li>
+                        <li><a href="{{route('timeline')}}">Dòng thời gian</a></li>
                         @endif
                        {{-- <li><a href="#">History</a></li>
                         <li><a href="#">Incomplete</a></li>--}}
                         @if (
                         Auth::user()->isAllowed('LeaveController:employeeleaves')
                         )
-                        <li><a href="{{route('employeeleaves')}}" >Leaves</a></li>
+                        <li><a href="{{route('employeeleaves')}}" >Nghỉ phép</a></li>
                         @endif
-                        <li><a href="{{route('leave.index')}}" @if(request()->is('leave/create') || str_contains(Request::fullUrl(),'leave/edit') || str_contains(Request::fullUrl(),'leave/show')) class="active" @endif >My Leaves</a></li>
+                        <li><a href="{{route('leave.index')}}" @if(request()->is('leave/create') || str_contains(Request::fullUrl(),'leave/edit') || str_contains(Request::fullUrl(),'leave/show')) class="active" @endif >Xin nghỉ phép của tôi</a></li>
                     </ul>
                 </li>
                 @if (
@@ -159,7 +160,7 @@
                 </li>
                 @endif
 
-                <li @if(request()->is('help')) class="active" @endif> <a class="waves-effect waves-dark" href="{{route('admin.help')}}" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Help</span></a>
+                <li @if(request()->is('help')) class="active" @endif> <a class="waves-effect waves-dark" href="{{route('admin.help')}}" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">Trợ giúp</span></a>
                 </li>
                 {{--///////// Second End--}}
             </ul>

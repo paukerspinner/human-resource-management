@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('organization_hierarchy.create')}}'"><span class="fas fa-plus"></span> Add Org Employee</button>
 	<h3 class="text-themecolor">Organization Hierarchy</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)"></a>Dashboard</li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)"></a>Bảng điều khiển</li>
 		<li class="breadcrumb-item active">People-Management</li>
 		<li class="breadcrumb-item active">Org Chart</li>
 	</ol>

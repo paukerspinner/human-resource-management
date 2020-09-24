@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('Heading')
     <button type="button" onclick="window.location.href='{{route('admin.dashboard')}}'" class="btn btn-info float-right">Back</button>
-    <h3 class="text-themecolor">Dashboard</h3>
+    <h3 class="text-themecolor">Bảng điều khiển</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Update Profile</li>
     </ol>
 @stop

@@ -5,8 +5,8 @@
     @endif
     <h3 class="text-themecolor">Add Attendance</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
         <li class="breadcrumb-item active">Add Attendance</li>
     </ol>
 @endsection
@@ -55,7 +55,7 @@
                                         <label class="control-label text-right col-md-3">Select Name Here</label>
                                         <div class="col-md-9">
                                             <select class="form-control custom-select" name="employee_id">
-                                                <option value="0">Select Employee</option>
+                                                <option value="0">Chọn nhân viên</option>
                                                 @foreach($employees as $emp)
                                                     <option value="{{$emp->id}}" @if($emp_id == $emp->id) selected @endif >{{$emp->firstname}} {{$emp->lastname}}</option>
                                                 @endforeach
@@ -90,7 +90,7 @@
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-right col-md-3">Time Out</label>
+                                        <label class="control-label text-right col-md-3">Thời điểm về</label>
                                         <div class="col-md-9">
                                             <input type="datetime-local" class="form-control" name="time_out" value="{{isset($attendance_summary['last_timestamp_out']) && $attendance_summary['last_timestamp_out']!=""  ? date('Y-m-d\TH:i',strtotime($attendance_summary['last_timestamp_out'])): '' }}">
                                         </div>
@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group row">
-                                <label class="control-label text-right col-md-6">Is Delay? :</label>
+                                <label class="control-label text-right col-md-6">Đến trễ? :</label>
                                 <div class="col-md-4 ">
                                     @if(isset($attendance_summary->is_delay)) {{$attendance_summary->is_delay}} @endif
                                 </div>
@@ -162,7 +162,7 @@
                                 <div class="modal-body">
                                     <div class="container-fluid">
                                                 <select class="form-control custom-select" name="employee_id" hidden>
-                                                    <option value="0">Select Employee</option>
+                                                    <option value="0">Chọn nhân viên</option>
                                                     @foreach($employees as $emp)
                                                         <option value="{{$emp->id}}" @if($emp_id == $emp->id) selected @endif >{{$emp->firstname}} {{$emp->lastname}}</option>
                                                     @endforeach
@@ -212,7 +212,7 @@
                                                 <th>Break Start</th>
                                                 <th>Break End</th>
                                                 <th>Comment</th>
-                                                <th>Actions</th>
+                                                <th>Hành động</th>
                                             </tr>
                                         </thead>
 

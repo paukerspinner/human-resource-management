@@ -2,10 +2,10 @@
 @section('Heading')
 	<h3 class="text-themecolor">Add Leave</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-		<li class="breadcrumb-item active">Settings</li>
-		<li class="breadcrumb-item active">Employee Leaves</li>
-		<li class="breadcrumb-item active">Apply</li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+		<li class="breadcrumb-item active">Cài đặt</li>
+		<li class="breadcrumb-item active">Thêm nghỉ phép cho công nhân</li>
+		<li class="breadcrumb-item active">Áp dụng</li>
 	</ol>
 @endsection
 @section('content')
@@ -26,7 +26,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group row">
-										<label class="control-label text-right col-md-3">Select Employee</label>
+										<label class="control-label text-right col-md-3">Chọn nhân viên</label>
 										<div class="col-md-9">
 											<select class="form-control custom-select" id="employee" name="employee">
 												@foreach($employees as $employee)

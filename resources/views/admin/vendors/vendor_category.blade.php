@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal" data-target="#create">Add Vendor Category</button>
     <h3 class="text-themecolor">Vendor Category</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Settings</li>
         <li class="breadcrumb-item active">Vendor Category</li>
     </ol>
@@ -20,8 +20,8 @@
                             @if($vendor_category->count() > 0)
                                 <tr>
                                     <th>#</th>
-                                    <th> Name</th>
-                                    <th> Actions</th>
+                                    <th>Tên</th>
+                                    <th> Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label">Name</label>
+                            <label class="control-label">Tên</label>
                             <input  type="text" name="category_name" placeholder="Enter Vendor Category name here" class="form-control">
                         </div>
                     </div>

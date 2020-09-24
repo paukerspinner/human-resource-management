@@ -2,7 +2,7 @@
 @section('Heading')
     <h3 class="text-themecolor">Create Employee</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Employees</li>
         <li class="breadcrumb-item active">Create</li>
     </ol>
@@ -34,18 +34,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label text-right col-md-3">First Name</label>
+                                        <label class="control-label text-right col-md-3">Tên Riêng</label>
                                         <div class="col-md-9">
-                                            <input type="text"  name="firstname" value="{{ old('firstname') }}" class="form-control" placeholder="Enter First Name" required>
+                                            <input type="text"  name="firstname" value="{{ old('firstname') }}" class="form-control" placeholder="Nhập Tên Riêng" required>
                                         </div>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="control-label text-right col-md-3">Last Name</label>
+                                        <label class="control-label text-right col-md-3">Họ</label>
                                         <div class="col-md-9">
-                                            <input type="text" name="lastname" value="{{ old('lastname') }}" class="form-control " placeholder="Enter Last Name" required>
+                                            <input type="text" name="lastname" value="{{ old('lastname') }}" class="form-control " placeholder="Nhập họ" required>
                                         </div>
                                     </div>
                                 </div>

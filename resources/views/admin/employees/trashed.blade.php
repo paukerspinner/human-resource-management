@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Trashed Employees</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Employees</li>
 		<li class="breadcrumb-item active">Trashed</li>
 	</ol>
@@ -22,7 +22,7 @@
 							<th> Lastname</th>
 							<th> Role</th>
 							<th> Organization Email</th>
-							<th>Actions</th>
+							<th>Hành động</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -73,7 +73,7 @@
 				{{--<th> Lastname</th>--}}
 				{{--<th> Role</th>--}}
 				{{--<th> Organization Email</th>--}}
-				{{--<th>Actions</th>--}}
+				{{--<th>Hành động</th>--}}
 			{{--</thead>--}}
 			{{--<tbody class="table-bordered table-hover table-striped">--}}
 				{{--<tr>--}}
@@ -83,7 +83,7 @@
 					{{--<td>{{$employee->org_email}}</td>--}}
 					{{--<td>--}}
 						{{--<div class="btn-group">--}}
-							{{--<button type="button" class="btn btn-primary">Actions</button>--}}
+							{{--<button type="button" class="btn btn-primary">Hành động</button>--}}
 							{{--<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">--}}
 								{{--<span class="caret"></span>--}}
 							{{--</button>--}}

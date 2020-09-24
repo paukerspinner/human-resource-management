@@ -89,7 +89,7 @@
 
                         </li>
                         <li class="list-group-item">
-                            <a href="{{route('employee.attendance')}}">Attendance</a>
+                            <a href="{{route('employee.attendance')}}">Điểm danh</a>
                         </li>
                     </ul>
                 </div>

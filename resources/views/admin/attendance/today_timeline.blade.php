@@ -1,10 +1,10 @@
 @extends('layouts.admin') @section('title') HRM|{{$title}} @endsection
 @section('Heading')
-    <h3 class="text-themecolor">Attendance</h3>
+    <h3 class="text-themecolor">Điểm danh</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
-        <li class="breadcrumb-item active">Today Attendance Timeline</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
+        <li class="breadcrumb-item active">Điểm danh hôm nay</li>
     </ol>
 @stop
 @section('content')
@@ -20,7 +20,7 @@
                                 <div class="round round-md align-self-center round-primary"><i class="far fa-calendar-check"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h5 class="m-b-0 font-light">{{$present}}</h5>
-                                    <h5 class="m-b-0">Present</h5></div>
+                                    <h5 class="m-b-0">Có mặt</h5></div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 <div class="round round-md align-self-center round-danger"><i class="far fa-calendar-times"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h5 class="m-b-0 font-light"> {{$absent}}</h5>
-                                    <h5 class="m-b-0">Absent</h5></div>
+                                    <h5 class="m-b-0">Vắng mặt</h5></div>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                                 <div class="round round-md align-self-center round-warning"><i class="far fa-clock"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h3 class="m-b-0 font-light">{{$delays}}</h3>
-                                    <h5 class="text-muted m-b-0">Delays</h5></div>
+                                    <h5 class="text-muted m-b-0">Đến muộn</h5></div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                 <div class="round round-md align-self-center round-success"><i class="fas fa-calendar-times"></i></div>
                                 <div class="m-l-10 align-self-center">
                                     <h3 class="m-b-0 font-light">{{$leavesCount}}</h3>
-                                    <h5 class="text-muted m-b-0">Leaves</h5></div>
+                                    <h5 class="text-muted m-b-0">Nghỉ phép</h5></div>
                             </div>
                         </div>
                     </div>
@@ -71,14 +71,14 @@
                 <table id="myTable" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th>Designation</th>
                         <th>Branch</th>
-                        <th>Time in</th>
-                        <th>Time Out</th>
-                        <th>Total Time</th>
-                        <th>Delay</th>
-                        <th>Actions</th>
+                        <th>Thời điểm đến</th>
+                        <th>Thời điểm về</th>
+                        <th>Tổng thời gian</th>
+                        <th>Đến trễ</th>
+                        <th>Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -101,7 +101,7 @@
                                     @endif
                                 @endforeach
                             @if(!isset($employee['attendanceSummary'][0]) && !in_array($employee->id,$employeeLeave))
-                                <p class="text-white badge badge-danger  font-weight-bold">Absent</p>
+                                <p class="text-white badge badge-danger  font-weight-bold">Vắng mặt</p>
                             @endif
                                 <td>
                                 @if(
@@ -121,7 +121,21 @@
                                     {{isset($employee['attendanceSummary'][0]) ? gmdate('H:i', floor(number_format(($employee['attendanceSummary'][0]['total_time'] / 60), 2, '.', '') * 3600))  : ''}}
                             @endif
                             </td>
-                            <td>{{isset($employee['attendanceSummary'][0]) ? $employee['attendanceSummary'][0]['is_delay'] : ''}}</td>
+                            <td>
+                                <form action="{{route('attendance.acceptDelay', ['id' => $employee['id'], 'date' => $today])}}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{isset($employee['attendanceSummary'][0]) ? $employee['attendanceSummary'][0]['is_delay'] : ''}}
+                                    @if ($employee['attendanceSummary'][0]['is_delay'] == 'yes')
+                                        <button class="btn btn-warning btn-sm" data-toggle="tooltip" title="{{$employee['attendanceSummary'][0]['reason']}}">?</button>
+                                        
+                                        @if ($employee['attendanceSummary'][0]['accept_delay'] != 'yes')
+                                            <button type="submit" class="btn btn-success btn-sm" name="action" value="accept">Chấp nhận</button>
+                                        @else
+                                            <button type="submit" class="btn btn-danger btn-sm" name="action" value="refuse">Hủy chấp nhận</button>
+                                        @endif
+                                    @endif
+                                </form>
+                            </td>
                             <td class="text-nowrap">
                                 <a class="btn btn-info btn-sm" href="{{route('attendance.createBreak', $employee['id'])}}/{{$today}}" data-original-title="Add"> <i class="fas fa-plus text-white"></i></a>
                                 <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#popup{{ $employee['id'] }}" data-original-title="Edit"> <i class="fas fa-pencil-alt text-white"></i></a>
@@ -163,7 +177,7 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <br>
-                                                                    <label for="time_out">Time Out</label>
+                                                                    <label for="time_out">Thời điểm về</label>
                                                                     <div class="input-group">
                                                                         <input type="datetime-local" class="form-control" name="time_out" value="{{isset($employee['attendanceSummary'][0]) && $employee['attendanceSummary'][0]['last_timestamp_out']!=""  ? date('Y-m-d\TH:i',strtotime($employee['attendanceSummary'][0]['last_timestamp_out'])) : ''}}" />
                                                                         <span class="input-group-addon">
@@ -176,7 +190,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                        <button type="submit" class="btn btn-success create-btn" id="add-btn" >Present</button>
+                                                        <button type="submit" class="btn btn-success create-btn" id="add-btn" >Có mặt</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -195,6 +209,12 @@
     </div>
 
 @push('scripts')
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
 <script type="text/javascript">
 $("input.zoho").click(function (event) {
     if ($(this).is(":checked")) {

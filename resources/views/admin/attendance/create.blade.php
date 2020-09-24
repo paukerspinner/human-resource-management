@@ -3,8 +3,8 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('leaves')}}'"><span class="fas fa-plus" ></span> Add Leave</button>
     <h3 class="text-themecolor">Add Attendance</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
         <li class="breadcrumb-item active">Create</li>
     </ol>
 @endsection
@@ -27,7 +27,7 @@
                                         <label class="control-label text-right col-md-3">Select Name Here</label>
                                         <div class="col-md-9">
                                             <select class="form-control custom-select" name="employee_id">
-                                                <option value="0">Select Employee</option>
+                                                <option value="0">Chọn nhân viên</option>
                                                 @foreach($employees as $emp)
                                                     <option value="{{$emp->id}}" @if($emp_id == $emp->id) selected @endif >{{$emp->firstname}} {{$emp->lastname}}</option>
                                                 @endforeach
@@ -62,7 +62,7 @@
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group row ">
-                                        <label class="control-label text-right col-md-3">Time Out</label>
+                                        <label class="control-label text-right col-md-3">Thời điểm về</label>
                                         <div class="col-md-9">
                                             <input type="time" class="form-control" name="time_out" value="">
                                         </div>
@@ -90,7 +90,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group row">
-                                <label class="control-label text-right col-md-6">Is Delay? :</label>
+                                <label class="control-label text-right col-md-6">Đến trễ? :</label>
                                 <div class="col-md-4 ">
                                     @if(isset($attendance_summary->is_delay)) {{$attendance_summary->is_delay}} @endif
                                 </div>
@@ -128,9 +128,9 @@
                                         @if($attendances->count() > 0)
                                             <tr>
                                                 <th>Time In</th>
-                                                <th>Time Out</th>
+                                                <th>Thời điểm về</th>
                                                 <th>Comment</th>
-                                                <th>Actions</th>
+                                                <th>Hành động</th>
                                             </tr>
                                         </thead>
 
@@ -173,7 +173,7 @@
                                                                             <input type="time" class="form-control" name="time_in"  value="{{\Carbon\Carbon::parse($att->timestamp_in)->toTimeString()}}" />
                                                                         </div>
 
-                                                                        <label for="time">Time Out</label>
+                                                                        <label for="time">Thời điểm về</label>
                                                                         <div class="input-group">
                                                                             <input type="time" class="form-control" name="time_out" @if($att->timestamp_out!=null)value="{{\Carbon\Carbon::parse($att->timestamp_out)->toTimeString()}}" @endif />
                                                                         </div>

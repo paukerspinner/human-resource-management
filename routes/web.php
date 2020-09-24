@@ -437,6 +437,7 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'AttendanceController@showAttendance', //show Attendance
             'as'   => 'attendance',
         ]);
+
         //attendance
         Route::Get('/attendance/timeline/{id?}', [
             'uses' => 'AttendanceController@showTimeline', //show Attendance
@@ -506,6 +507,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::Post('/attendance/update', [
             'uses' => 'AttendanceController@update',
             'as'   => 'attendance.update',
+        ]);
+
+        Route::Post('/attendance/acceptDelay/{id}/{date}',[
+            'uses' => 'AttendanceController@acceptDelay',
+            'as' => 'attendance.acceptDelay'
         ]);
 
         Route::GET('/attendance/export', [
@@ -640,6 +646,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::GET('/attendance/myAttendance/{id?}', [
         'uses' => 'AttendanceController@authUserTimeline',
         'as'   => 'myAttendance',
+    ]);
+    Route::Get('/attendance/self',[
+        'uses' => 'AttendanceController@selfAttendance',
+        'as' => 'attendance.self'
+    ]);
+    Route::Post('/attendance/self/',[
+        'uses' => 'AttendanceController@selfStoreAttendance',
+        'as' => 'attendance.selfStoreAttendance'
     ]);
     Route::post('/attendance/correction_email', [
         'uses' => 'AttendanceController@correctionEmail',

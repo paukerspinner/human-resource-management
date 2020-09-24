@@ -6,9 +6,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="name">Name:</label>
+                            <label for="name">Tên:</label>
                             <select class="form-control nameselect2" name="employee_id">
-                                <option value="0">Select Employee</option>
+                                <option value="0">Chọn nhân viên</option>
                                 @foreach($employees as $emp)
                                 <option value="{{$emp->id}}" @if($emp_id == $emp->id) selected @endif >{{$emp->firstname}} {{$emp->lastname}}</option>
                                 @endforeach
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="time_out">Time Out</label>
+                    <label for="time_out">Thời điểm về</label>
                     <div class="input-group">
                         <input class="form-control" name="time_out" value="{{$current_time}}" />
                         <span class="input-group-addon">
@@ -46,7 +46,7 @@
                 </div>
                 
                 <div class="container-fluid" id="totalhours">
-                    <label for="delay">is Delay ?</label>
+                    <label for="delay">Đến trễ ?</label>
                     <div>
                         @if(isset($attendance_summary->is_delay)) {{$attendance_summary->is_delay}} @endif
                     </div>
@@ -75,7 +75,7 @@
             <table class="table">
                 <thead>
                     <th>Time In</th>
-                    <th>Time Out</th>
+                    <th>Thời điểm về</th>
                 </thead>
                 <tbody class="table-bordered table-hover table-striped">
                     @if($attendances->count() > 0) @foreach($attendances as $att)
@@ -120,7 +120,7 @@
                                                     </span>
                                                 </div>
 
-                                                <label for="time">Time Out</label>
+                                                <label for="time">Thời điểm về</label>
                                                 <div class="input-group time_out">
                                                     <input class="form-control time_out tp" name="time_out" value="{{Carbon\Carbon::parse($att->timestamp_out)->format('h:i a')}}" />
                                                     <span class="input-group-addon">

@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('office_location.create')}}'">Add Office Location</button>
 	<h3 class="text-themecolor">Office Location</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Offices</li>
 	</ol>
 @stop
@@ -18,12 +18,12 @@
 						<table id="demo-foo-addrow" class="table  m-t-30 table-hover contact-list" data-paging="true" data-paging-size="7">
 							<thead>
 							<tr>
-								<th> Name</th>
+								<th>Tên</th>
 								<th> Address</th>
 								<th> Timing Start</th>
 								<th> Timing Off</th>
 								<th> Contact No</th>
-								<th> Actions</th>
+								<th> Hành động</th>
 							</tr>
 							</thead>
 							<tbody>

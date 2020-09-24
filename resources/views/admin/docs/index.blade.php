@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('documents.create')}}'" data-toggle="modal" data-target="#add-contact"><span class="fas fa-plus" ></span> Add New Document</button>
 	<h3 class="text-themecolor">Documents</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Settings</li>
 		<li class="breadcrumb-item active">Documents</li>
 	</ol>

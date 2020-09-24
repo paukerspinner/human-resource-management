@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Create Office Location</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">Settings</li>
 		<li class="breadcrumb-item active">Branch</li>
 		<li class="breadcrumb-item active">Create</li>
@@ -19,7 +19,7 @@
 						<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="control-label">Name</label>
+								<label class="control-label">Tên</label>
 								<input  type="text" name="name" placeholder="Enter name here" class="form-control" value="{{old('name')}}">
 							</div>
 						</div>

@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('Heading')
-    <button type="button"  onclick="window.location.href='{{route('leaves')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus"></span> Apply For Leave</button>
-    <h3 class="text-themecolor">My Leaves</h3>
+    <button type="button"  onclick="window.location.href='{{route('leaves')}}'" class="btn btn-info btn-rounded m-t-10 float-right"><span class="fas fa-plus"></span> Làm đơn xin nghỉ phép</button>
+    <h3 class="text-themecolor">Xin nghỉ phép của tôi</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-        <li class="breadcrumb-item active">Attendance</li>
-        <li class="breadcrumb-item active">My Leaves</li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
+        <li class="breadcrumb-item active">Điểm danh</li>
+        <li class="breadcrumb-item active">Xin nghỉ phép của tôi</li>
     </ol>
 @stop
 @section('content')
@@ -25,7 +25,7 @@
                                     <th>Subject</th>
                                     <th>Status</th>
                                     @if(Auth::user()->id == 1)
-                                        <th>Actions</th>
+                                        <th>Hành động</th>
                                     @endif
                                 </tr>
                             </thead>

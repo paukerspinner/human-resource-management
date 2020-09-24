@@ -2,7 +2,7 @@
 @section('Heading')
 	<h3 class="text-themecolor">Update Hierarchy</h3>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+		<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 		<li class="breadcrumb-item active">People-Management</li>
 		<li class="breadcrumb-item active">Org Chart</li>
 		<li class="breadcrumb-item active">Update</li>
@@ -21,7 +21,7 @@
 						<div class="form-body">
 							<div class="col-md-10">
 								<div class="form-group">
-									<label class="control-label">Name</label>
+									<label class="control-label">Tên</label>
 									<select class="form-control custom-select" name="employee_id">
 										@foreach ($employees as $employee)
 											<option value="{{$employee->id}}" @if($employee->id == $organization_hierarchy->employee_id) selected @endif>{{$employee->firstname}} {{$employee->lastname}}</option>
@@ -85,7 +85,7 @@
 			{{--<input name="_method" type="hidden" value="PUT">--}}
 			{{--{{csrf_field()}}--}}
 			{{--<div class="form-group">--}}
-				{{--<label for="name">Name</label>--}}
+				{{--<label for="name">Tên</label>--}}
 				{{--<select name="employee_id" class="form-control">--}}
 					{{--@foreach ($employees as $employee)--}}
 					{{--<option value="{{$employee->id}}" @if($employee->id == $organization_hierarchy->employee_id) selected @endif>{{$employee->firstname}} {{$employee->lastname}}</option>--}}

@@ -9,7 +9,7 @@
     <div class="panel-body">
         <table class="table">
             <thead>
-                <th>Delays</th>
+                <th>Đến muộn</th>
                 <th>CheckinTime</th>
                 <th>CheckoutTime</th>
                 @if(Auth::user()->admin)

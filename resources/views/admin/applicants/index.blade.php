@@ -3,7 +3,7 @@
 	<button type="button" class="btn btn-info btn-rounded m-t-10 float-right" onclick="window.location.href='{{route('applicants.hired')}}'"> Hired</button>
 	<h3 class="text-themecolor">Applicants</h3>
 	<ol class="breadcrumb">
-	<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+	<li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
 	<li class="breadcrumb-item active">Applicants</li>
 	</ol>
 @stop
@@ -18,12 +18,12 @@
 						<thead>
 						<tr>
 							<th>Avatar</th>
-							<th>Name</th>
+							<th>Tên</th>
 							<th>City</th>
 							<th>Job Status</th>
 							<th>Applied For</th>
 							<th>CV</th>
-							<th>Actions</th>
+							<th>Hành động</th>
 						</tr>
 						</thead>
 						<tbody>

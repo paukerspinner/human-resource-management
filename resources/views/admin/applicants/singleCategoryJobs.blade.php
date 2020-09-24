@@ -11,7 +11,7 @@
 			<thead>
 			<tr>
 				<th> Image</th>
-				<th> Name</th>
+				<th> Tên</th>
 				<th> City</th>
 				<th> Job Status </th>
 				<th> CV </th>

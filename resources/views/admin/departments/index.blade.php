@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal" data-target="#create">Add Department</button>
     <h3 class="text-themecolor">Departments</h3>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Bảng điều khiển</a></li>
         <li class="breadcrumb-item active">Settings</li>
         <li class="breadcrumb-item active">Departments</li>
     </ol>
@@ -20,9 +20,9 @@
                             @if($departments->count() > 0)
                                 <tr>
                                 <td>#</td>
-                                <th> Name</th>
+                                <th> Tên</th>
                                 <th> Status</th>
-                                <th> Actions</th>
+                                <th> Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,7 +64,7 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label class="control-label">Name</label>
+                                                                <label class="control-label">Tên</label>
                                                                 <input  type="text" name="department_name" value="{{old('department_name',$department->department_name)}}" placeholder="Enter Department name here" class="form-control">
                                                             </div>
                                                             <div class="form-group">
@@ -104,11 +104,11 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label">Name</label>
+                            <label class="control-label">Tên</label>
                             <input  type="text" name="department_name" placeholder="Enter Department name here" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Name</label>
+                            <label class="control-label">Tên</label>
                             <select  name="status"  class="form-control">
                             <option value="Active">Active</option>
                             <option value="InActive">InActive</option>

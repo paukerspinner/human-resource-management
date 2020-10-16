@@ -17,8 +17,7 @@ class EditAttendancesSummariesTable extends Migration
 
             // 1. Create new column
             // You probably want to make the new column nullable
-            $table->string('reason')->after('is_delay')->nullable();
-            $table->string('accept_delay')->after('reason')->nullable();
+            
         });
     }
 

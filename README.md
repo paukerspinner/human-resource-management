@@ -55,3 +55,4 @@ Once done migrating and seeding you will have default user:
 ## License
 
 The GleamHRM is open-sourced software licensed under the [GNU GPLv3](LICENSE).
+ HIHIHI

@@ -16,7 +16,7 @@ class CreateLeaveTypesTable extends Migration
         Schema::create('leave_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('count')->default(12);
+            $table->integer('amount')->default(12);
             $table->integer('status')->default(0);
             $table->timestamps();
         });

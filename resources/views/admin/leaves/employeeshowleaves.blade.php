@@ -27,13 +27,13 @@
                     <td>{{$leave->subject}}</td>
                     <td>{{($leave->status != '') ? $leave->status : 'Pending'}}</td>
                     <td>
-                        @if(Auth::user()->admin)
+                        {{-- @if(Auth::user()->admin)
                         <form action="{{ route('leave.destroy' , $leave->employee_id )}}" method="post">
                             {{ csrf_field() }}
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </form>
                         <a class="btn btn-info btn-sm" href="{{route('leave.edit',['id'=>$leave->id])}}">Edit</a>
-                        @endif
+                        @endif --}}
                     </td>
                 </tr>
                 @endforeach @else No leave found. @endif

@@ -41,10 +41,10 @@
                                         @if(
                                             (strtolower($leave->status) == 'pending' || $leave->status == '')
                                         ) 
-                                        <form action="{{ route('leave.destroy' , $leave->employee_id )}}" method="post">
+                                        {{-- <form action="{{ route('leave.destroy' , $leave->employee_id )}}" method="post">
                                             {{ csrf_field() }}
                                             <button class=" btn btn-danger btn-sm " type="submit"><i class="fas fa-window-close text-white "></i></button>
-                                        </form>
+                                        </form> --}}
                                         &nbsp;
                                         <a class="btn btn-info btn-sm" href="{{route('leave.edit',['id'=>$leave->id])}}" data-toggle="tooltip" data-original-title="Edit"> <i class="fas fa-pencil-alt text-white "></i></a>
                                         &nbsp;

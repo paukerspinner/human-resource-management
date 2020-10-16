@@ -14,12 +14,12 @@ class LeaveTypeSeeder extends Seeder
     {
         $leave_type = LeaveType::create([
             'name'  => 'Sick Leaves',
-            'count' => '12',
+            'amount' => '12',
         ]);
 
         $leave_type = LeaveType::create([
             'name'  => 'Casual Leaves',
-            'count' => '12',
+            'amount' => '12',
         ]);
     }
 }

@@ -22,7 +22,8 @@ class CreateAttendanceSummariesTable extends Migration
             $table->date('date');
             $table->string('status')->default('present');
             $table->string('is_delay')->default('no');
-            $table->string('accept_delay')->default('no');
+            $table->string('reason')->nullable();
+            $table->string('accept_delay')->nullable();
             $table->timestamps();
         });
     }
